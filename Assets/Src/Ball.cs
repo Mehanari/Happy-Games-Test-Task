@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Src
 {
-    public class Ball : MonoBehaviour, IBall
+    public class Ball : MonoBehaviour, IMovable
     {
         public float Speed { get; set; }
         public bool IsMoving { get; private set; }

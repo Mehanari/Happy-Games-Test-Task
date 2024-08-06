@@ -1,29 +1,25 @@
 using Src.InputHandling;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Src
 {
     public class GameEntryPoint : MonoBehaviour
     {
-        [SerializeField] private float ballDefaultSpeed = 10f;
-        [SerializeField] private Camera mainCamera;
         [SerializeField] private Ball ball;
-        [SerializeField] private BallDestinationsController ballDestinationsController;
+        [Header("Ball destinations")]
+        [SerializeField] private DestinationsController destinationsController;
         [SerializeField] private ClickDetector clickDetector;
-
-        private PlayerControls _controls;
+        [Header("Ball speed")]
+        [SerializeField] private SpeedController speedController;
+        [SerializeField] private SpeedConfig speedConfig;
+        [SerializeField] private Slider speedSlider;
+        
 
         private void Awake()
         {
-            _controls = new PlayerControls();
-            _controls.Enable();
-        
-            //Initializing ball
-            ball.Speed = ballDefaultSpeed;
-        
-            //Initializing click detector
-            clickDetector.Init(_controls, mainCamera);
-            ballDestinationsController.Init(ball, clickDetector);
+            destinationsController.Init(ball, clickDetector);
+            speedController.Init(speedSlider, speedConfig, ball);
         }
     }
 }

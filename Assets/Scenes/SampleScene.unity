@@ -335,9 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballDefaultSpeed: 500
-  mainCamera: {fileID: 519420031}
   ball: {fileID: 1995552547}
-  ballDestinationsController: {fileID: 1367725185}
+  destinationsController: {fileID: 1367725185}
   clickDetector: {fileID: 1862868503}
 --- !u!1 &1367725184
 GameObject:
@@ -350,7 +349,7 @@ GameObject:
   - component: {fileID: 1367725186}
   - component: {fileID: 1367725185}
   m_Layer: 0
-  m_Name: Ball Destinations Controller
+  m_Name: Destinations Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
