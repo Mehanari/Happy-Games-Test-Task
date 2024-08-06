@@ -3,15 +3,19 @@ using UnityEngine;
 
 namespace Src
 {
+    /// <summary>
+    /// Script that can move a gameObject, to which it is attached, to a certain position
+    /// with given speed.
+    /// </summary>
     public class Ball : MonoBehaviour, IMovable
     {
+        private Vector2 _targetPosition;
+
         public float Speed { get; set; }
         public bool IsMoving { get; private set; }
     
         public event Action Arrived;
-    
-        private Vector2 _targetPosition;
-    
+        
         public void MoveTo(Vector2 position)
         {
             _targetPosition = position;

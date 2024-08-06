@@ -3,11 +3,17 @@ using UnityEngine;
 
 namespace Src
 {
-   public class DestinationsController : MonoBehaviour
+   /// <summary>
+   /// Adds new destination to the queue each time the Click event is invoked
+   /// on the given IClickDetector.
+   /// Sequentially passes those destinations to the given IMovable, switching
+   /// to a new destination each time the Arrived event is invoked.
+   /// </summary>
+   public class DestinationsQueueController : MonoBehaviour
    {
       private IMovable _movable;
       private IClickDetector _clickDetector;
-      private readonly Queue<Vector2> _destinations = new Queue<Vector2>();
+      private readonly Queue<Vector2> _destinations = new ();
 
       public void Init(IMovable movable, IClickDetector clickDetector)
       {

@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Src
 {
+    /// <summary>
+    /// Abstraction over any object that can somehow move with certain speed
+    /// and invoke Arrived event once it reached given destination.
+    /// </summary>
     public interface IMovable
     {
         public float Speed { get; set; }

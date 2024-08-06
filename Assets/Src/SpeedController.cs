@@ -3,6 +3,14 @@ using UnityEngine.UI;
 
 namespace Src
 {
+   /// <summary>
+   /// Reacts to the slider value changes and adjusts
+   /// speed of the given IMovable accordingly.
+   /// Sets speed according to formula: slider_value * max_speed,
+   /// where max speed is taken from config.
+   ///
+   /// In the Init method sets speed of the given IMovable to default value from config.
+   /// </summary>
    public class SpeedController : MonoBehaviour
    {
       private Slider _slider;
